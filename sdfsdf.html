@@ -1,0 +1,60 @@
+
+<html>
+<head>
+<style> 
+#mydiv {
+    width: 500px;
+    height: 200px;
+    /*background-color: red;*/
+    position: relative;
+	overflow: hidden;
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 10s; /* Chrome, Safari, Opera */
+    -webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-play-state: running;
+}
+
+#mydiv:hover {
+	-webkit-animation-play-state: paused;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+    from { top: 500px; }
+	to { top: -200px; }
+}
+</style>
+</head>
+<body>
+<div style="height:400px; width:700px; overflow:hidden; background-color:yellow">
+<div id="mydiv" >
+	<section>
+		<p><a href="" target="_blank"> 1. Test1</a></p>
+		<p><a href="" target="_blank"> 2. Test2</a></p>
+		<p><a href="" target="_blank"> 3. Test3</a></p>
+		<p><a href="" target="_blank"> 4. Test4</a></p>
+		<p><a href="" target="_blank"> 5. Test5</a></p>
+		<p><a href="" target="_blank"> 6. Test6</a></p>
+		<p><a href="" target="_blank"> 7. Test7</a></p>
+	</section>
+</div>
+</div>
+<input id="action" type="button" value="Stop it" onclick="stopIt();">
+<script>
+
+function stopIt() {
+	var element = document.getElementById("mydiv");
+	var button = document.getElementById("action");
+	if (button.value == "Stop it") {
+		element.style["-webkit-animation-play-state"] = "paused";
+		button.value = "Run it";
+	} else {
+		element.style["-webkit-animation-play-state"] = "running";
+		button.value = "Stop it";
+	}
+}
+
+</script>
+</body>
+</html>
